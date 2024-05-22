@@ -1,6 +1,6 @@
 # Proyecto de Tienda Online de Ropa de Mujer
 
-![Logo de la Tienda](./img-modelo-p/logo-3-Photoroom.png)
+![Logo de la Tienda](./img-modelo-p/logo-3-Photoroom.png) { width=100px }
 
 
 ## Descripción
@@ -9,16 +9,15 @@ Este proyecto es una tienda online de ropa de mujer, creada como parte de un tra
 
 ## Integrantes del Proyecto
 
-- **Nombre del Integrante 1**: Descripción breve del rol y contribuciones.
-- **Nombre del Integrante 2**: Descripción breve del rol y contribuciones.
-- **Nombre del Integrante 3**: Descripción breve del rol y contribuciones.
-- **Nombre del Integrante 4**: Descripción breve del rol y contribuciones.
+- **Gilberto Serrato 1**: Página principal.
+- **Julio Acuña 2**: Página Catálogo.
+- **Nombre del Integrante 3**: Página Colección.
+- **Nombre del Integrante 4**: Página Registrase.
 
 ## Características
 
 - **Diseño Responsivo**: La tienda está optimizada para verse bien en dispositivos móviles y de escritorio.
 - **Catálogo de Productos**: Muestra una amplia gama de productos con imágenes, descripciones y precios.
-- **Páginas de Detalle**: Cada producto tiene su propia página con información detallada.
 - **Estilos Personalizados**: Uso de CSS personalizado para un diseño único y atractivo.
 
 ## Tecnologías Utilizadas
