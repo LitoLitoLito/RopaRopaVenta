@@ -1,7 +1,6 @@
 # Proyecto de Tienda Online de Ropa de Mujer
 
-![Logo de la Tienda](./img-modelo-p/logo-3-Photoroom.png){ width=100px }
-
+<img src="./img-modelo-p/logo-3-Photoroom.png" alt="Logo de la Tienda" width="100">
 
 ## Descripción
 
@@ -11,8 +10,8 @@ Este proyecto es una tienda online de ropa de mujer, creada como parte de un tra
 
 - **Gilberto Serrato 1**: Página principal.
 - **Julio Acuña 2**: Página Catálogo.
-- **Nombre del Integrante 3**: Página Colección.
-- **Nombre del Integrante 4**: Página Registrase.
+- **Dario A. 3**: Página Colección.
+- **Luciano Serrani 4**: Página Registrase.
 
 ## Características
 
