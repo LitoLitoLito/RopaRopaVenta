@@ -1,6 +1,6 @@
 # Proyecto de Tienda Online de Ropa de Mujer
 
-![Logo de la Tienda](./img-modelo-p/logo-3-Photoroom.png){ width=100px }
+![Logo de la Tienda](./img-modelo-p/logo-3-Photoroom.png)
 
 
 ## Descripción
