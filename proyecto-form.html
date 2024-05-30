@@ -1,40 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Proyecto Final" />
-    <meta name="keywords" content="Proyecto Final, HTML , CSS" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto Final">
+    <meta name="keywords" content="Proyecto Final, HTML , CSS">
 
     <title>Registrarse | Proyecto Final</title>
 
-   
     <!--favicom-->
     <link
       rel="icon"
       type="image/x-icon"
       href="./img-modelo-p/logo-3-Photoroom.png-Photoroom.png"
-    />
+    >
 
     <!--css-->
-    <link rel="stylesheet" href="./estilosCss/styles-index.css" />
-    <link rel="stylesheet" href="./estilosCss/proyecto-form.css" />
+    <link rel="stylesheet" href="./estilosCss/styles-index.css">
+    <link rel="stylesheet" href="./estilosCss/proyecto-form.css">
     <!--bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
-    />
-    <!--script boo-->
-    
+    >
 
     <!--bootstrap icon-->
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
+    >
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,157 +55,178 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
   </head>
 
-  <body>      <!--menu de navegacion-->
+  <body>
       <header class="header1">
         <!--menu de navegacion-->
         <nav class="navbar navbar-expand-md navbar-light example .navbar-brand">
           <div class="container-fluid">
             <!--logo y eslogan-->
             <div class="logo-eslogan">
-              <a rel="noopener noreferrer">
-              <img class="logo"
-                src="./img-modelo-p/logo-3-Photoroom.png"
-                
-                alt="logo de la pagina"
-              /></a>
+              <a rel="noopener noreferrer" href="">
+                <img class="logo"
+                  src="./img-modelo-p/logo-3-Photoroom.png"
+                  alt="logo de la pagina"
+                >
+              </a>
               <p class="eslogan"> 
-                <a href="index.html" type="none">María Bonita</a>
+                <a href="index.html">María Bonita</a>
               </p>
             </div>
             <!--logo y eslogan fin-->
 
             <!--lista de menu-->
-            <div class=" collapse navbar-collapse" id="navbar-Toggler">
-              <!--https://www.youtube.com/watch?v=nOubjLM9Cbc-->
-              
+            <div class=" collapse navbar-collapse" id="navbar-Toggler">              
               <ul 
                 class="navbar-nav d-flex justify-content-center aling-items-center" >
-
                 <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="index.html"
                   rel="noopener noreferrer">Home</a>
                 </li>
-
                 <!--catalogo menu deplegable-->
-
                 <li class="nav-item menu-sub">
-                  <a class="nav-link" href="catalogo.htm" rel="noopener noreferrer">Catálogo</a>
+                  <a class="nav-link" href="catalogo.html" rel="noopener noreferrer">Catálogo</a>
                   <!--menu desplegable-->
                 </li>
                 <!--catalogo menu deplegable fin-->
                 <li class="nav-item">
-                  <a class="nav-link" href="nueva_coleccion.htm" rel="noopener noreferrer">Colección</a>
+                  <a class="nav-link" href="nueva_coleccion.html" rel="noopener noreferrer">Colección</a>
                 </li> 
-  
-                
                 <li class="nav-item li-registro">
-                  <a class="nav-link" href="proyecto-form.htm">Registrarse</a>
+                  <a class="nav-link" href="proyecto-form.html">Registrarse</a>
                 </li>
-
                 <li class="nav-item item-car">
                   <a class="nav-link" href="#"
                   rel="noopener noreferrer"><i class="bi bi-cart4"></i></a>
                 </li>
-                
-              </ul>
-              
+              </ul> 
             </div>
             <!--lista de menu fin-->
             
               
             <!--boton ocultar menu desplegable-->
-            <button class="boootom"
-              
+            <button class="boootom"  
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbar-Toggler"
-              aria-controls="navbarTogglerDemo01"
+              aria-controls="navbar-Toggler"
               aria-expanded="false"
               aria-label="Toggle navigation">
               <span class="navbar-toggler-icon button-nav"></span>
-            </button>
-            
+            </button>  
           </div>
-          
         </nav>
     </header>
 
 
-    <section id="registrarse" class="contenedor">
+    <div id="registrarse" class="contenedor">
       <article class="article-form">
         <h2>Formulario de registro</h2>
-        <form class="form-1">
+        <form id="registrationForm" class="form-1">
           <fieldset class="campo-datos">
-              <legend>Datos personales</legend>
-              <div>
-                <label for="name">Nombre</label>
-                <input type="text" id="nombre">
+            <legend>Datos personales</legend>
+            <div>
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" required>
+            </div>
+            <div>
+              <label for="apellido">Apellido</label>
+              <input type="text" id="apellido" required>
+            </div>
+            <div>
+              <label for="dni">DNI</label>
+              <input type="number" id="dni" required>
+            </div>
+            <div>
+              <select class="form-select" id="calId" name="calId" required>
+                <option value="">Provincia</option>
+                <option value="Buenos Aires">Buenos Aires</option>
+                <option value="Catamarca">Catamarca</option>
+                <option value="Chaco">Chaco</option>
+                <option value="Chubut">Chubut</option>
+                <option value="Córdoba">Córdoba</option>
+                <option value="Corrientes">Corrientes</option>
+                <option value="Entre Ríos">Entre Ríos</option>
+                <option value="Formosa">Formosa</option>
+                <option value="Jujuy">Jujuy</option>
+                <option value="La Pampa">La Pampa</option>
+                <option value="La Rioja">La Rioja</option>
+                <option value="Mendoza">Mendoza</option>
+                <option value="Misiones">Misiones</option>
+                <option value="Neuquén">Neuquén</option>
+                <option value="Río Negro">Río Negro</option>
+                <option value="Salta">Salta</option>
+                <option value="San Juan">San Juan</option>
+                <option value="San Luis">San Luis</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                <option value="Santa Fe">Santa Fe</option>
+                <option value="Santiago del Estero">Santiago del Estero</option>
+                <option value="Tierra del Fuego">Tierra del Fuego</option>
+                <option value="Tucumán">Tucumán</option>
+                </select>
+            </div>
+            <div>
+              <label for="email">E-mail</label>
+              <input type="email" id="email" required>
+            </div>
+            <div>
+              <label for="password">Password</label>
+              <input type="password" id="password" required>
+            </div>
+            <div class="form-group">
+              <label>Calificación</label>
+              <div class="inline-input">
+                <input type="radio" id="rate1" name="rating" value="1" required class="radio">
+                <label for="rate1">1</label>
+                <input type="radio" id="rate2" name="rating" value="2" required class="radio">
+                <label for="rate2">2</label>
+                <input type="radio" id="rate3" name="rating" value="3" required class="radio">
+                <label for="rate3">3</label>
+                <input type="radio" id="rate4" name="rating" value="4" required class="radio">
+                <label for="rate4">4</label>
+                <input type="radio" id="rate5" name="rating" value="5" required class="radio">
+                <label for="rate5">5</label>
               </div>
-              
-              <div>
-                <label for="apellido">Apellido</label>
-                <input type="text" id="apellido">
-              </div>
-              
-              <div>
-                <label for="dni">DNI</label>
-                <input type="number" id="dni">
-              </div>
-              
-              <div>
-                <label for="ciudad">Ciudad</label>
-                <input type="text" id="ciudad">
-              </div>
-              
-              <div>
-                <label for="email">E-mail</label>
-                <input type="email" id="email">
-              </div>
-              
-              <div>
-                <label for="password">Password</label>
-                <input type="password" id="password">
-              </div>
-                            
-          </fieldset> 
-          <fieldset class="campo-texto">  
-            <legend>Comentarios<img src="./imagenes/msg-icon.png" class="msg-icon"/></legend> 
-              <textarea class="text-area" name="" id="" cols="30" rows="10" placeholder="Cuentanos algo sobre tí.."></textarea>
-              <button class="boton-enviar">Enviar<img src="./imagenes/white-arrow.png" class="white-arrow-icon"/></button>
-
+            </div>            
+           
+          </fieldset>
+          <fieldset class="campo-texto">
+            <legend>Comentarios<img src="./imagenes/msg-icon.png" alt="msg" class="msg-icon"></legend>
+            <textarea class="text-area" id="comentarios" cols="30" rows="10" placeholder="Cuentanos algo sobre tí.."></textarea>
+            <div class="form-group2">
+              <label for="terms">Acepto los términos y condiciones</label>
+              <input type="checkbox" id="terms" required>
+            </div>
+            <button type="submit" class="boton-enviar">Enviar<img src="./imagenes/white-arrow.png" alt="msg" class="white-arrow-icon"></button>
           </fieldset>
         </form>
-      </article> 
-    </section>
+        <div id="successMessage" style="display: none; color: rgb(255, 0, 119);">
+          ¡Formulario enviado con éxito!
+        </div>
+      </article>
+    </div>
+    
+    
       
 
     <!--footer-->
     <footer class="seccion-footer">
       <!--logo-->      
       <div class="cont-1">
-        
-
         <div class="d-flex d-flex-colum justify-content-center align-items-center">
-          <img class=" footer-logo bi bi-bootstrap-fill" src="./img-modelo-p/logo-3-Photoroom.png">
+          <img class=" footer-logo bi bi-bootstrap-fill" src="./img-modelo-p/logo-3-Photoroom.png" alt="">
           <p class="footer-texto text-center">Te esperamos en nuestra <br> tienda fisica. <br>        
           </p>
-          
-        
           <a class="ubicacion" href="" target="_blank" rel="noopener noreferrer" ><i class="bi bi-geo-alt-fill"></i></a>
-        
         </div>
       </div>
       <!--redes icono-->
       <div class="cont-1">
         <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
-
         <a href="" target="_blank" rel="noopener noreferrer" ><i class="bi bi-github"></i></a>
         <a href="" target="_blank" rel="noopener noreferrer" ><i class="bi bi-linkedin"></i></a>
         <a href="" target="_blank" rel="noopener noreferrer" ><i class="bi bi-whatsapp"></i></a>
         <a href="" target="_blank" rel="noopener noreferrer" ><i class="bi bi-messenger"></i></a>
         <a href="mailto:gss-v-18505276@hotmail.com"><i class="bi bi-envelope-at-fill"></i></a>
-        
-    
         </div>
       </div>
       <!--politicas y privacidad-->
@@ -225,20 +242,15 @@
         <div class="derechos-autor">
           Comisión 24254
         </div>
-
         <div class="derechos-autor">
           <b>Javascript / NodeJs</b>
         </div>
-
         <div class="derechos-autor-1">
           Grupo Nº 19 
         </div>
-
         <div class="derechos-autor">
-          Términos y Condiciones &#169
-        </div>
-
-                
+          Términos y Condiciones &#169;
+        </div>                
       </div>
 
     </footer>
@@ -248,7 +260,7 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"
-    ></script>
-
+    ></script>   
+    <script src="./js/validación-form.js" defer></script>
   </body>
 </html>
