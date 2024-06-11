@@ -1,0 +1,222 @@
+/* Nav-bar */
+.navbar-toggler-icon {
+    background-color: #e4e4e4;
+    border-radius: 2px;
+    transition: 0.6s;
+}
+.navbar-toggler-icon:hover {
+    background-color: hsl(0, 0%, 68%);
+}
+
+.boootom{
+    background-color: transparent;
+    border: none;
+    padding: 15px 22px;
+    margin-right: 50px;
+}
+
+/* General Styles */
+.fondo {
+    background-color: rgb(0, 0, 0);
+}
+
+body > .header1 {
+    min-width: 400px;
+    margin-bottom: 10px;
+}
+
+.categoria-separador {
+    font-family: "Cinzel", serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+    width: 100%;
+    display: block;
+    font-size: 24px; /* Puedes ajustar el tamaño de fuente si es necesario */
+}
+
+.categoria-container {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+   
+}
+
+.categoria {
+    font-family: "Cinzel", serif;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    width: 100%; /* Asegura que el título ocupe el ancho completo del contenedor */
+}
+
+
+
+
+
+.contenido-productos {
+    width: 95%;
+    background-color: rgb(242, 235, 242);
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 auto 3px auto; /* Centra horizontalmente el contenedor y mantiene el margen inferior */
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+
+/* Product Styles */
+.producto {
+    width: 210px;
+    height: 550px;
+    margin: 20px;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 7px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: block;
+    position: relative;
+}
+
+.producto h2 {
+    font-family: "Cinzel", serif;
+    font-size: 20px;
+    margin-top: 10px;
+    color: rgb(164, 26, 26);
+}
+
+.producto p {
+    font-family: 'Fauna One', sans-serif;
+    font-size: 16px;
+    color: rgb(102, 102, 102);
+}
+
+.precio {
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+
+.botones-compra {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+}
+
+.button1 {
+    width: 150px;
+    background-color: rgb(255, 0, 119);
+    color: rgb(255, 255, 255);
+    padding: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 0;
+}
+
+.button1:hover {
+    background-color: rgb(200, 0, 90); /* Cambia este color al que prefieras para el estado hover */
+}
+
+.container button {
+    font-family: 'Montserrat';
+    color: rgb(255, 255, 255);
+    border: 2px solid transparent;
+    border-radius: 2px;
+}
+
+/* Image Styles */
+.imagen {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+}
+
+.imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.imagen .secundaria {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.imagen:hover .secundaria {
+    opacity: 1;
+}
+
+.categoria-separador {
+    
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin:0;
+    width: 100%;
+    display: block;
+    font-size: 24px;
+}
+
+.categoria-menu {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.categoria-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.categoria-menu li {
+    margin: 0 15px;
+}
+
+.categoria-menu a {
+    font-family: "Cinzel", serif;
+    color: white;
+    text-decoration:none;
+    font-size: 18px;
+}
+
+.categoria-menu a:hover {
+    text-decoration: none;
+    color: rgb(255, 0, 119);
+}
+
+
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .producto {
+        width: calc(50% - 40px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .producto {
+        width: calc(100% - 40px);
+    }
+}
