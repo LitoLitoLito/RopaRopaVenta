@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('./api/productos')
+    fetch('/api/productos')
         .then(response => response.json())
         .then(data => {
             const container = document.getElementById('productos-container');
