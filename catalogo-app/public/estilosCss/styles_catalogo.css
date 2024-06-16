@@ -8,7 +8,7 @@
     background-color: hsl(0, 0%, 68%);
 }
 
-.boootom{
+.boootom {
     background-color: transparent;
     border: none;
     padding: 15px 22px;
@@ -34,14 +34,13 @@ body > .header1 {
     margin: 0;
     width: 100%;
     display: block;
-    font-size: 24px; /* Puedes ajustar el tamaño de fuente si es necesario */
+    font-size: 1.5rem; /* Ajustado a rem para mayor flexibilidad */
 }
 
 .categoria-container {
     display: flex;
     justify-content: center; /* Centra el contenido horizontalmente */
     align-items: center; /* Centra el contenido verticalmente */
-   
 }
 
 .categoria {
@@ -53,21 +52,15 @@ body > .header1 {
     width: 100%; /* Asegura que el título ocupe el ancho completo del contenedor */
 }
 
-
-
-
-
 .contenido-productos {
     width: 95%;
     background-color: rgb(242, 235, 242);
-    
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 auto 3px auto; /* Centra horizontalmente el contenedor y mantiene el margen inferior */
     box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
-
 
 /* Product Styles */
 .producto {
@@ -85,14 +78,14 @@ body > .header1 {
 
 .producto h2 {
     font-family: "Cinzel", serif;
-    font-size: 20px;
+    font-size: 1.25rem; /* Ajustado a rem */
     margin-top: 10px;
     color: rgb(164, 26, 26);
 }
 
 .producto p {
     font-family: 'Fauna One', sans-serif;
-    font-size: 16px;
+    font-size: 1rem; /* Ajustado a rem */
     color: rgb(102, 102, 102);
 }
 
@@ -100,7 +93,6 @@ body > .header1 {
     color: rgb(0, 0, 0);
     font-weight: bold;
 }
-
 
 .botones-compra {
     position: absolute;
@@ -162,7 +154,6 @@ body > .header1 {
 }
 
 .categoria-separador {
-    
     background-color: black;
     color: white;
     text-align: center;
@@ -170,7 +161,7 @@ body > .header1 {
     margin:0;
     width: 100%;
     display: block;
-    font-size: 24px;
+    font-size: 1.5rem; /* Ajustado a rem */
 }
 
 .categoria-menu {
@@ -197,8 +188,8 @@ body > .header1 {
 .categoria-menu a {
     font-family: "Cinzel", serif;
     color: white;
-    text-decoration:none;
-    font-size: 18px;
+    text-decoration: none;
+    font-size: 1.125rem; /* Ajustado a rem */
 }
 
 .categoria-menu a:hover {
@@ -206,17 +197,33 @@ body > .header1 {
     color: rgb(255, 0, 119);
 }
 
-
-
 /* Responsive Styles */
 @media only screen and (max-width: 768px) {
     .producto {
         width: calc(50% - 40px);
+    }
+    .producto h2 {
+        font-size: 1rem; /* Ajustar el tamaño de la fuente para pantallas más pequeñas */
+    }
+    .producto p {
+        font-size: 0.875rem; /* Ajustar el tamaño de la fuente para pantallas más pequeñas */
+    }
+    .categoria-separador, .categoria-menu a {
+        font-size: 1.25rem; /* Ajustar el tamaño de la fuente para pantallas más pequeñas */
     }
 }
 
 @media only screen and (max-width: 480px) {
     .producto {
         width: calc(100% - 40px);
+    }
+    .producto h2 {
+        font-size: 0.875rem; /* Ajustar el tamaño de la fuente para pantallas más pequeñas */
+    }
+    .producto p {
+        font-size: 0.75rem; /* Ajustar el tamaño de la fuente para pantallas más pequeñas */
+    }
+    .categoria-separador, .categoria-menu a {
+        font-size: 1rem; /* Ajustar el tamaño de la fuente para pantallas más pequeñas */
     }
 }
