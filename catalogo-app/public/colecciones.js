@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Agrupar productos por categoría
             const productosPorCategoria = data.reduce((acc, producto) => {
+                if (!producto.disponible) return acc;  // Ignorar productos no disponibles
+
                 const categoria = producto.categoria;
                 if (!acc[categoria]) {
                     acc[categoria] = [];
