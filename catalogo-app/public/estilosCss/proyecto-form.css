@@ -1,14 +1,29 @@
+/* Ajustes de encabezado */
 .header1{
     min-width: 400px;
     height: 85px;
     margin-bottom: 10px;
 }
 
+.eslogan1 {
+    font-family: "Niconne", cursive;
+    font-weight: 400;
+    font-style: normal;/*
+    font-family: 'Croissant One', cursive;*/
+    font-size: 40px; 
+    padding-left: 10%;
+    width: 100%;
+    height: auto;
+    border-left: solid rgb(248, 244, 247) 2px;
+    color: rgb(254, 253, 254);   
+}
+/* Ajustes de títulos */
 h2{
     font-family: "Cinzel", serif;
     font-size: 1.2rem;
 }
 
+/* Ajustes de navegación */
 .div-a-ul{
     justify-content: left;
     align-items: center;
@@ -20,6 +35,7 @@ h2{
     border-radius: 2px;
     transition: 0.6s;
 }
+
 .navbar-toggler-icon:hover {
     background-color: #aeaeae;
 }
@@ -31,7 +47,7 @@ h2{
     margin-right: 50px;
 }
 
-/* Section */
+/* Ajustes de contenedor y formulario */
 .contenedor{
     display: flex;
     flex-direction: column;
@@ -43,7 +59,7 @@ h2{
 }
 
 .article-form{
-    width:65%;
+    width: 30%;
     margin: 2rem auto 3rem;
     color: #d3d3d3;
     background-color: rgba(0, 0, 0, 0.7);
@@ -52,6 +68,7 @@ h2{
     border-radius: 6px;
 }
 
+/* Ajustes de campo de datos */
 .campo-datos{
     display: flex;
     flex-direction: column;
@@ -71,10 +88,11 @@ h2{
     color: #aeaeae;
 }
 
+/* Ajustes de formulario */
 .form-1{
     padding: 0;
     display: grid;
-    grid-template-columns: 45% 50%;
+    grid-template-columns: 1fr;
     gap: 5%;
 }
 
@@ -85,27 +103,8 @@ label {
     color: #d3d3d3;
 }
 
-#calId{
+#calId, input{
     width: 100%;
-    min-height: 65px;
-    text-align: left;
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid rgb(255, 0, 119);
-    border-radius: 2px;
-    font-family: 'Montserrat';
-    font-size: 1rem;
-    margin: 0.5rem 0rem;
-    padding: 0;
-    color: #d3d3d3;
-}
-
-option{
-    color: #6b6b6b;
-}
-
-input{
-   width: 100%;
     background-color: transparent;
     border: none;
     border-bottom: 2px solid rgb(255, 0, 119);
@@ -114,8 +113,11 @@ input{
     font-size: 0.8rem;
     color: #d3d3d3;
     transition: 0.6s ease-in-out;
+    margin: 0.5rem 0rem;
+    padding: 0;
 }
-input:hover{
+
+input:hover, #calId:hover{
     border-bottom: 2px solid #d3d3d3;
     background: rgba(0, 0, 0, 0.5);
     cursor: pointer;
@@ -135,12 +137,14 @@ input:hover{
     padding: 0.5rem;
     transition: 0.6s ease-in-out;
 }
+
 textarea::placeholder {
     font-family: 'Montserrat';
     font-size: 1rem;
     color: #6b6b6b;
     padding: 0.5rem;
 }
+
 textarea:hover{
     color: #d3d3d3;
     border: 2px solid rgb(255, 0, 119);
@@ -157,6 +161,7 @@ textarea:hover{
     padding-left: 20px;
 }
 
+/* Ajustes de botón */
 .boton-enviar{
     background-color: rgb(255, 0, 119);
     color: #dbdbdb;
@@ -164,19 +169,25 @@ textarea:hover{
     border: 2px solid transparent;
     border-radius: 2px;
     font-family: 'Montserrat';
+    max-width: 300px;
     width: 100%;
-    margin: 0 auto;
+    padding: 20px;
+    margin: 50px auto;
     height: 2rem;
     transition: 0.6s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .boton-enviar:hover{
     background-color: transparent;
-
     border: 2px solid rgb(255, 0, 119);
 }
 
+/* Ajustes de leyenda */
 legend{
-    font-family: cinzel;
+    font-family: Cinzel;
     color: #d3d3d3;
     text-align: center;
     padding: 0.6rem;
@@ -208,20 +219,27 @@ legend{
     margin-left: 20px;
 }
 
-/* Media */
+/* Ajustes de contenedor de botón */
+.form-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
 
+.checkbox {
+    display: flex; 
+    align-items:center; 
+    margin: auto;
+}
+
+/* Media Queries */
 @media screen and (max-width: 1300px) {    
-    .form-1{
-        grid-template-columns: 1fr;
-    }
-
     .article-form{
-        width:75%;
+        width: 75%;
     }
-
+}
 
 @media screen and (max-width: 700px) {   
-    /*hero-inferior-imagen responsivo se oculta en md*/
     .hero-inferior-imagen{
         min-width: 600px;
     }
@@ -235,12 +253,12 @@ legend{
         margin: 1rem auto 2rem;
         padding: 1rem 2rem 2rem; 
     }
+
     .campo-texto{
         height: 90%;
     }
+
     .msg-icon{
         display: none;
     }
-
-}
 }

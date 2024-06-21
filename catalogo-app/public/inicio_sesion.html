@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto Final">
+    <meta name="keywords" content="Proyecto Final, HTML, CSS">
+    <title>Iniciar Sesión | Proyecto Final</title>
+    
+    <!--favicom-->
+    <link rel="icon" type="image/x-icon" href="./img-modelo-p/logo-3-Photoroom.png-Photoroom.png">
+
+    <!--css-->
+    <link rel="stylesheet" href="./estilosCss/styles-index.css">
+    <link rel="stylesheet" href="./estilosCss/proyecto-form.css">
+    <!--bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--bootstrap icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Croissant+One&family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Fauna+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+ 
+</head>
+<body>
+    <header class="header1">
+        <!--menu de navegacion-->
+        <nav class="navbar navbar-expand-md navbar-light example .navbar-brand">
+            <div class="container-fluid">
+                <!--logo y eslogan-->
+                <div class="logo-eslogan">
+                    <a href="#" rel="noopener noreferrer">
+                    <img class="logo"
+                      src="./img-modelo-p/logo-3-Photoroom.png"
+                      
+                      alt="logo de la pagina" 
+                    ></a>
+                    <p class="eslogan"> 
+                      <a href="index.html">María Bonita</a>
+                    </p>
+                  </div>
+                <!--logo y eslogan fin-->
+
+                <!--lista de menu-->
+                <div class="collapse navbar-collapse" id="navbar-Toggler">
+                    <ul class="navbar-nav d-flex justify-content-center align-items-center">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html" rel="noopener noreferrer">Home</a></li>
+                        <li class="nav-item menu-sub"><a class="nav-link" href="catalogo.html" rel="noopener noreferrer">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nueva_coleccion.html" rel="noopener noreferrer">Colección</a></li>
+                        <li class="nav-item li-registro"><a class="nav-link" href="proyecto-form.html">Registrarse</a></li>
+                        <li class="nav-item li-registro"><a class="nav-link" href="inicio_sesion.html">Iniciar Sesión</a></li>
+                        <li class="nav-item li-logout" style="display: none;"><a class="nav-link" href="#" id="logoutLink">Cerrar Sesión</a></li>
+                        <li class="nav-item item-car"><a class="nav-link" href="#" rel="noopener noreferrer"><i class="bi bi-cart4"></i></a></li>
+                    </ul>
+                </div>
+                <!--lista de menu fin-->
+
+                <!--boton ocultar menu desplegable-->
+                <button class="boootom" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-Toggler" aria-controls="navbar-Toggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon button-nav"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="login" class="contenedor">
+        <article class="article-form">
+            <h2>Inicio de Sesión</h2>
+            <form id="loginForm" class="form-1">
+                <fieldset class="campo-datos">
+                    <legend>Datos de acceso</legend>
+                    <div>
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                </fieldset>
+                
+                <div class="form-button-container">
+                    <button type="submit" class="boton-enviar">Iniciar Sesión<img src="./imagenes/white-arrow.png" alt="msg" class="white-arrow-icon"></button>
+                </div>
+            </form>
+            <div id="successMessage" style="display: none; color: rgb(255, 0, 119);">
+                ¡Inicio de sesión exitoso!
+            </div>
+        </article>
+    </div>
+
+    <!--footer-->
+    <footer class="seccion-footer">
+        <!--logo-->      
+        <div class="cont-1">
+          
+  
+          <div class="d-flex d-flex-colum justify-content-center align-items-center">
+            <img class=" footer-logo bi bi-bootstrap-fill" src="./img-modelo-p/logo-3-Photoroom.png" alt="">
+            <p class="footer-texto text-center">Te esperamos en nuestra <br> tienda fisica. <br>        
+            </p>
+            
+          
+            <a class="ubicacion" href="" target="_blank" rel="noopener noreferrer" ><i class="bi bi-geo-alt-fill"></i></a>
+          
+          </div>
+        </div>
+        <!--redes icono-->
+        <div class="cont-1">
+          <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+  
+          <a href="" target="_blank" rel="noopener noreferrer" ><i class="bi bi-github"></i></a>
+          <a href="" target="_blank" rel="noopener noreferrer" ><i class="bi bi-linkedin"></i></a>
+          <a href="" target="_blank" rel="noopener noreferrer" ><i class="bi bi-whatsapp"></i></a>
+          <a href="" target="_blank" rel="noopener noreferrer" ><i class="bi bi-messenger"></i></a>
+          <a href="mailto:gss-v-18505276@hotmail.com"><i class="bi bi-envelope-at-fill"></i></a>
+          
+      
+          </div>
+        </div>
+        <!--politicas y privacidad-->
+        <div class="cont-2 cont-1">
+          
+          <!--logo-->
+          <div class="derechos-autor">
+              <a href="https://inscripcionesagencia.bue.edu.ar/codoacodo/" target="_blank">
+                <img src="https://inscripcionesagencia.bue.edu.ar/codoacodo/img/graficos/logoCACsinbloque.png" alt="">
+              </a>
+          </div>
+  
+          <div class="derechos-autor">
+            Comisión 24254
+          </div>
+  
+          <div class="derechos-autor">
+            <b>Javascript / NodeJs</b>
+          </div>
+  
+          <div class="derechos-autor-1">
+            Grupo Nº 19 
+          </div>
+  
+          <div class="derechos-autor">
+            Términos y Condiciones &#169;
+          </div>
+          
+        </div>
+  
+      </footer>
+
+    <!--bootstrap para js siempre se recomienda colocarlo al final -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/login-validation.js" defer></script>
+</body>
+</html>
