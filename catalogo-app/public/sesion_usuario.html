@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Proyecto Final">
+    <meta name="keywords" content="Proyecto Final, HTML, CSS">
+    <title>Registrarse | Proyecto Final</title>
+    <!-- Favicom -->
+    <link rel="icon" type="image/x-icon" href="./img-modelo-p/logo-3-Photoroom.png">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./estilosCss/styles-index.css">
+    <link rel="stylesheet" href="./estilosCss/sesion-usuario.css">
+    <link rel="stylesheet" href="./estilosCss/proyecto-form.css">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Croissant+One&family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header1">
+        <!--menu de navegacion-->
+        <nav class="navbar navbar-expand-md navbar-light example .navbar-brand">
+            <div class="container-fluid">
+                <!--logo y eslogan-->
+                <div class="logo-eslogan">
+                    <a href="#" rel="noopener noreferrer">
+                    <img class="logo"
+                      src="./img-modelo-p/logo-3-Photoroom.png"
+                      
+                      alt="logo de la pagina" 
+                    ></a>
+                    <p class="eslogan"> 
+                      <a href="index.html">María Bonita</a>
+                    </p>
+                  </div>
+                <!--logo y eslogan fin-->
+
+                <!--lista de menu-->
+                <div class="collapse navbar-collapse" id="navbar-Toggler">
+                    <ul class="navbar-nav d-flex justify-content-center align-items-center">
+                        <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html" rel="noopener noreferrer">Home</a></li>
+                        <li class="nav-item menu-sub"><a class="nav-link" href="catalogo.html" rel="noopener noreferrer">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="nueva_coleccion.html" rel="noopener noreferrer">Colección</a></li>
+                        <li class="nav-item li-registro"><a class="nav-link" href="proyecto-form.html">Registrarse</a></li>
+                        <li class="nav-item li-registro"><a class="nav-link" href="inicio_sesion.html">Iniciar Sesión</a></li>
+                        <li class="nav-item li-logout" style="display: none;"><a class="nav-link" href="#" id="logoutLink">Cerrar Sesión</a></li>
+                        <li class="nav-item item-car"><a class="nav-link" href="#" rel="noopener noreferrer"><i class="bi bi-cart4"></i></a></li>
+                    </ul>
+                </div>
+                <!--lista de menu fin-->
+
+                <!--boton ocultar menu desplegable-->
+                <button class="boootom" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-Toggler" aria-controls="navbar-Toggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon button-nav"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-usuario">
+                <div class="tu-perfil">
+                    <div class="perfil">
+                        <div>
+                            <h2>Tu perfil</h2>
+                            <small>¡Bienvenido, usuario!</small>
+                        </div>
+                        
+                        <img src="./imagenes/comentario-1-mujer.png" class="user-icon">
+                    </div>
+                
+                <article class="usuario-form">
+                    <form id="registrationForm" action="/register" method="POST" class="form-1">
+                        <fieldset class="campo-datos">
+                            <legend>Actualizar datos personales</legend>
+                            <div>
+                                <label for="nombre">Nombre</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div>
+                                <label for="apellido">Apellido</label>
+                                <input type="text" id="apellido" name="apellido"  required>
+                            </div>
+                            <div>
+                                <label for="dni">DNI</label>
+                                <input type="text" id="dni" name="dni" required>
+                            </div>
+                            <div>
+                                <label for="provincia">Provincia</label>
+                                <select class="form-select" id="provincia" name="provincia" required>
+                                    <option value="">Selecciona una provincia</option>
+                                    <!-- Opciones de provincia -->
+                                </select>
+                            </div>
+                            <div>
+                                <label for="email">E-mail</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div>
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Calificación</label>
+                                <div class="inline-input">
+                                    <input type="radio" id="rate1" name="rating" value="1" required class="radio">
+                                    <label for="rate1">1</label>
+                                    <input type="radio" id="rate2" name="rating" value="2" required class="radio">
+                                    <label for="rate2">2</label>
+                                    <input type="radio" id="rate3" name="rating" value="3" required class="radio">
+                                    <label for="rate3">3</label>
+                                    <input type="radio" id="rate4" name="rating" value="4" required class="radio">
+                                    <label for="rate4">4</label>
+                                    <input type="radio" id="rate5" name="rating" value="5" required class="radio">
+                                    <label for="rate5">5</label>
+                                </div>
+                            </div>
+                            <button type="button" class="boton-actualizar">Actualizar mi registro</button>
+                            <button type="button" class="boton-borrar">Borrarme</button>
+                        </fieldset>
+                    </form>
+                    <div id="successMessage" style="display: none; color: rgb(255, 0, 119);">¡Formulario enviado con éxito!</div>
+                </article>
+            </div>
+
+            <div class="tu-compra">
+                <div class="perfil">
+                    <div>
+                        <h2>Tu Compra</h2>
+                        <small>Detalle de tu compra</small>
+                    </div>
+                    <img src="./imagenes/carrito.png" class="user-icon">
+                </div>
+                <form id="compraForm" action="/comprar" method="POST">
+                    <fieldset>
+                        <div>
+                            <label for="monto">Monto total</label>
+                            <input type="text" id="monto" name="monto" placeholder="Monto total">
+                        </div>
+                        <div>
+                            <label for="carrito">Tu carrito</label>
+                            <input id="carrito" name="carrito" placeholder="Productos en el carrito"></input>
+                        </div>
+                        <div>
+                            <label for="mediosPago">Medios de pago</label>
+                            <select id="mediosPago" name="mediosPago">
+                                <option value="">Selecciona un medio de pago</option>
+                                <!-- Opciones de medios de pago -->
+                            </select>
+                        </div>
+                        <button type="button" class="boton-enviar">Seguir comprando</button>
+                        <button type="submit" class="boton-enviar">Finalizar compra</button>
+                    </fieldset>
+                </form>
+            </div>
+    </div>
+    
+
+    <footer class="seccion-footer">
+        <!-- Logo -->
+        <div class="cont-1">
+            <div class="d-flex d-flex-colum justify-content-center align-items-center">
+                <img class="footer-logo bi bi-bootstrap-fill" src="./img-modelo-p/logo-3-Photoroom.png" alt="">
+                <p class="footer-texto text-center">Te esperamos en nuestra <br> tienda física. <br></p>
+                <a class="ubicacion" href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-geo-alt-fill"></i></a>
+            </div>
+        </div>
+        <!-- Redes sociales -->
+        <div class="cont-1">
+            <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+                <a href="#" target="_blank" rel="noopener noreferrer"><i class="bi bi-messenger"></i></a>
+                <a href="mailto:gss-v-18505276@hotmail.com"><i class="bi bi-envelope-at-fill"></i></a>
+            </div>
+        </div>
+        <!-- Políticas y privacidad -->
+        <div class="cont-2 cont-1">
+            <!-- Logo -->
+            <div class="derechos-autor">
+                <a href="https://inscripcionesagencia.bue.edu.ar/codoacodo/" target="_blank">
+                    <img src="https://inscripcionesagencia.bue.edu.ar/codoacodo/img/graficos/logoCACsinbloque.png" alt="">
+                </a>
+            </div>
+            <div class="derechos-autor">Comisión 24254</div>
+            <div class="derechos-autor"><b>Javascript / NodeJs</b></div>
+            <div class="derechos-autor-1">Grupo Nº 19</div>
+            <div class="derechos-autor">Términos y Condiciones &#169;</div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- Validación de formulario -->
+    <script src="./js/validación-form.js" defer></script>
+    <script src="./js/sesion_usuario.js" defer></script>
+</body>
+</html>

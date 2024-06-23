@@ -77,5 +77,55 @@ router.post('/register', async (req, res) => {
 });
 
 
+// Ruta PUT para actualizar un USUARIO por ID
+
+router.put('/api/usuarios/:id', async (req, res) => {
+  const userId = req.params.id;
+  const { nombre, apellido, dni, provincia, email, password, rating, comentarios, acepto_terminos } = req.body;
+
+  // Validaciones adicionales del servidor
+  if (!nombre || !apellido || !dni || !provincia || !email || !password || !rating || !comentarios || !acepto_terminos) {
+    return res.status(400).json({ mensaje: 'Todos los campos son obligatorios' });
+  }
+
+  try {
+    // Actualiza el usuario en la base de datos
+    const [result] = await pool.execute(
+      'UPDATE usuarios SET nombre=?, apellido=?, dni=?, provincia=?, email=?, password=?, rating=?, comentarios=?, acepto_terminos=? WHERE id=?',
+      [nombre, apellido, dni, provincia, email, password, rating, comentarios, acepto_terminos, userId]
+    );
+
+    if (result.affectedRows > 0) {
+      res.status(200).json({ mensaje: 'Usuario actualizado exitosamente' });
+    } else {
+      res.status(404).json({ mensaje: 'Usuario no encontrado' });
+    }
+  } catch (error) {
+    console.error('Error al actualizar el usuario:', error);
+    res.status(500).json({ mensaje: 'Error interno del servidor' });
+  }
+});
+
+
+// Ruta DELETE para borrar un USUARIO por ID
+router.delete('/api/usuarios/:id', async (req, res) => {
+  const userId = req.params.id;
+
+  try {
+    // Borra el usuario de la base de datos
+    const [result] = await pool.execute('DELETE FROM usuarios WHERE id=?', [userId]);
+
+    if (result.affectedRows > 0) {
+      res.status(200).json({ mensaje: 'Usuario borrado exitosamente' });
+    } else {
+      res.status(404).json({ mensaje: 'Usuario no encontrado' });
+    }
+  } catch (error) {
+    console.error('Error al borrar el usuario:', error);
+    res.status(500).json({ mensaje: 'Error interno del servidor' });
+  }
+});
+
+
 
 export default router;

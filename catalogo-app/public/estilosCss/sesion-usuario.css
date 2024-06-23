@@ -1,0 +1,133 @@
+/* Estilos generales */
+.container-usuario {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 60px;
+    font-family: 'Montserrat';
+}
+
+.tu-perfil, .tu-compra {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tu-compra {
+    width: 55%; /* Ancho del contenedor principal */
+    margin-bottom: 20px;
+    padding: 20px 50px;
+}
+
+.tu-perfil{
+    width: 35%;
+    margin-bottom: 20px;
+} 
+
+
+.usuario-form{
+    margin:0;
+}
+
+.boton-actualizar{
+    background-color: rgb(0, 135, 130);
+    color: #dbdbdb;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    font-family: 'Montserrat';
+    max-width: 300px;
+    width: 100%;
+    padding: 20px;
+    margin: 20px auto;
+    height: 2rem;
+    transition: 0.6s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boton-borrar{
+    background-color: rgba(255, 0, 119);
+    color: #dbdbdb;
+    font-size: 1rem;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    font-family: 'Montserrat';
+    max-width: 300px;
+    width: 100%;
+    padding: 20px;
+    margin: 10px auto;
+    height: 2rem;
+    transition: 0.6s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.campo-datos{
+    margin: 10px 30px;
+}
+
+.perfil{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;   
+}
+small{
+    color: #dbdbdb;
+    padding-left: 10px;
+}
+
+.user-icon{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid rgb(0, 135, 130);
+    object-fit: cover;
+    margin: 10px;
+    background-color: #d2d2d2;
+}
+
+/* @media screen */
+
+@media screen and (max-width: 1300px) {    
+    .container-usuario{
+        flex-direction: column;
+    }
+    .tu-compra{
+        width: 90%;
+    }
+    .tu-perfil{
+        width: 90%;
+    }
+    .campo-datos{
+        margin: 10px 30px;
+    }
+}
+
+.container-usuario h2{
+    color: #dbdbdb;
+    font-family: 'Montserrat';
+
+}
+
+@media screen and (max-width: 600px) {    
+    .container-usuario{
+        flex-direction: column;
+        width: 95%;
+    }
+    .tu-compra{
+        width: 95%;
+    }
+    .tu-perfil{
+        width: 95%;
+    }
+    .campo-datos{
+        margin: 10px 5px;
+    }
+}

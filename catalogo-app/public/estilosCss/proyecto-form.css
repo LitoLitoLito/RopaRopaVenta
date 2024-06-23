@@ -19,8 +19,9 @@
 }
 /* Ajustes de títulos */
 h2{
-    font-family: "Cinzel", serif;
+    font-family: 'Montserrat', serif;
     font-size: 1.2rem;
+    text-align: center;
 }
 
 /* Ajustes de navegación */
@@ -74,7 +75,8 @@ h2{
     flex-direction: column;
     text-align: left;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 1rem 1rem 1.2rem 1rem; 
+    /* padding: 1rem 1rem 1.2rem 1rem;  */
+    padding: 20px 50px;
 }
 
 .campo-texto{
@@ -187,7 +189,7 @@ textarea:hover{
 
 /* Ajustes de leyenda */
 legend{
-    font-family: Cinzel;
+    font-family: 'Montserrat';
     color: #d3d3d3;
     text-align: center;
     padding: 0.6rem;
@@ -218,6 +220,21 @@ legend{
     max-width: 40px;
     margin-left: 20px;
 }
+
+#provincia{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid rgb(255, 0, 119);
+    border-radius: 2px;
+    font-family: 'Montserrat';
+    font-size: 0.8rem;
+    color: #aeaeae;
+    transition: 0.6s ease-in-out;
+    margin: 0.5rem 0rem;
+    padding: 0;
+}
+
 
 /* Ajustes de contenedor de botón */
 .form-button-container {
