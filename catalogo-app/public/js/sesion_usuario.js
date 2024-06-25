@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         try {
             // Realizar la solicitud PUT utilizando fetch
-            const response = await fetch(`/api/usuarios/${userId}`, {
+            const response = await fetch(`/venta_ropa/usuarios/${userId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
