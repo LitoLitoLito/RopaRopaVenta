@@ -1,6 +1,7 @@
 import express from 'express';
 import { PORT } from './public/js/config.js';
 import apiRoutes from './routes.js'; // Asegúrate de que la ruta es correcta
+import path from 'path';
 
 const app = express();
 
@@ -16,12 +17,17 @@ app.use(apiRoutes);
 
 // Ruta para servir la página de productos
 app.get('/catalogo', (req, res) => {
-  res.sendFile(__dirname + '/public/catalogo.html');
+  res.sendFile(path.join(__dirname, 'public', 'catalogo.html'));
 });
 
 // Ruta para servir la página de colecciones
 app.get('/colecciones', (req, res) => {
-  res.sendFile(__dirname + '/public/nueva_coleccion.html');
+  res.sendFile(path.join(__dirname, 'public', 'nueva_coleccion.html'));
+});
+
+// Ruta para servir la página de inicio de sesión
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html')); // Asegúrate de que login.html es la página de inicio de sesión
 });
 
 // Middleware para manejar errores (ejemplo)

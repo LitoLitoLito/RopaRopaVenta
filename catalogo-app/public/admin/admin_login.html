@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Administración | Proyecto Final">
+    <meta name="keywords" content="Administración, Proyecto Final, HTML, CSS">
+    <title>Administración | Proyecto Final</title>
+    <link rel="icon" type="image/x-icon" href="../img-modelo-p/logo-3-Photoroom.png-Photoroom.png">
+    <link rel="stylesheet" href="../estilosCss/styles-index.css">
+    <link rel="stylesheet" href="../estilosCss/proyecto-form.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Niconne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Croissant+One&family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Fauna+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" 
+    href="../img-modelo-p/logo-3-Photoroom.png-Photoroom.png"
+    type="image/x-icon">
+    
+    <!--css-->
+    
+    <!--bootstrap -->
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous">
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    <link rel="preconnect" 
+    href="https://fonts.googleapis.com">
+    <link rel="preconnect" 
+    href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Niconne&display=swap">
+    
+    <link rel="preconnect" 
+    href="https://fonts.googleapis.com">
+    <link rel="preconnect" 
+    href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"  
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Croissant+One&family=Fjalla+One&display=swap">
+    
+
+    <style>
+        .admin-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .admin-menu .btn {
+            margin: 10px 0;
+            width: 200px;
+        }
+        #admin-panel {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="header1">
+        <nav class="navbar navbar-expand-md navbar-light example .navbar-brand">
+            <div class="container-fluid">
+                <div class="logo-eslogan">
+                    <a href="#" rel="noopener noreferrer">
+                    <img class="logo" src="../img-modelo-p/logo-3-Photoroom.png" alt="logo de la pagina"></a>
+                    <p class="eslogan">
+                      <a href="../index.html">María Bonita</a>
+                    </p>
+                </div>
+                <button class="boootom" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-Toggler" aria-controls="navbar-Toggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon button-nav"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="login-form" class="contenedor">
+        <article class="article-form">
+            <h2>Inicio de Sesión de Administrador</h2>
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Contraseña</label>
+                    <input type="password" class="form-control" id="password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Ingresar</button>
+            </form>
+            <div id="successMessage" style="display:none;">Inicio de sesión exitoso</div>
+        </article>
+    </div>
+
+    <div id="admin-panel" class="contenedor">
+        <article class="article-form">
+            <h2>Panel de Administración</h2>
+            <div class="admin-menu">
+                <a href="#" class="btn btn-primary">Modificar Usuarios</a>
+                <a href="../admin/modificar_p.html" class="btn btn-primary">Modificar Productos</a>
+                <a href="../admin/modificar_colecciones.html" class="btn btn-primary">Modificar Colecciones</a>
+                <a href="#" class="btn btn-primary">Modificar Ventas</a>
+            </div>
+        </article>
+    </div>
+
+    <footer class="seccion-footer">
+        <div class="cont-1">
+          <div class="d-flex d-flex-colum justify-content-center align-items-center">
+            <img class="footer-logo bi bi-bootstrap-fill" src="../img-modelo-p/logo-3-Photoroom.png" alt="">
+            <p class="footer-texto text-center">Te esperamos en nuestra <br> tienda fisica. <br>
+            </p>
+            <a class="ubicacion" href="" target="_blank" rel="noopener noreferrer"><i class="bi bi-geo-alt-fill"></i></a>
+          </div>
+        </div>
+        <div class="cont-1">
+          <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+            <a href="" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+            <a href="" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
+            <a href="" target="_blank" rel="noopener noreferrer"><i class="bi bi-whatsapp"></i></a>
+            <a href="" target="_blank" rel="noopener noreferrer"><i class="bi bi-messenger"></i></a>
+            <a href="mailto:gss-v-18505276@hotmail.com"><i class="bi bi-envelope-at-fill"></i></a>
+          </div>
+        </div>
+        <div class="cont-2 cont-1">
+          <div class="derechos-autor">
+              <a href="https://inscripcionesagencia.bue.edu.ar/codoacodo/" target="_blank">
+                <img src="https://inscripcionesagencia.bue.edu.ar/codoacodo/img/graficos/logoCACsinbloque.png" alt="">
+              </a>
+          </div>
+          <div class="derechos-autor">Comisión 24254</div>
+          <div class="derechos-autor"><b>Javascript / NodeJs</b></div>
+          <div class="derechos-autor-1">Grupo Nº 19</div>
+          <div class="derechos-autor">Términos y Condiciones &#169;</div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../admin/admin_login.js"></script>
+</body>
+</html>

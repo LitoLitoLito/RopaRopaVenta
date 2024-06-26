@@ -3,6 +3,59 @@ import { pool } from './public/js/db.js'; // Asegúrate de que esta ruta es corr
 
 const router = express.Router();
 
+// Ruta para obtener colecciones
+router.get('/api/colecciones1', async (req, res) => {
+  try {
+    const [results] = await pool.query('SELECT * FROM colecciones'); // Cambia "productos" por tu tabla real
+    res.json(results);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+// Ruta para obtener una coleccion por ID
+router.get('/api/colecciones1/:id', async (req, res) => {
+  const productId = req.params.id;
+  try {
+    const [results] = await pool.query('SELECT * FROM colecciones WHERE id_colecciones = ?', [productId]);
+    if (results.length > 0) {
+      res.json(results[0]);
+    } else {
+      res.status(404).send({ mensaje: 'Producto de colección no encontrado' });
+    }
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+// Ruta para actualizar una coleccion por ID
+router.put('/api/colecciones1/:id', async (req, res) => {
+  const productId = req.params.id;
+  const { categoria, titulo, descripcion, precio, imagen_principal, imagen_secundaria, disponible } = req.body;
+
+  // Validaciones adicionales del servidor
+  if (!categoria || !titulo || !descripcion || !precio || !imagen_principal || !imagen_secundaria || disponible === undefined) {
+    return res.status(400).json({ mensaje: 'Todos los campos son obligatorios' });
+  }
+
+  try {
+    // Actualiza el producto en la base de datos
+    const [result] = await pool.execute(
+      'UPDATE colecciones SET categoria=?, titulo=?, descripcion=?, precio=?, imagen_principal=?, imagen_secundaria=?, disponible=? WHERE id_colecciones=?',
+      [categoria, titulo, descripcion, precio, imagen_principal, imagen_secundaria, disponible, productId]
+    );
+
+    if (result.affectedRows > 0) {
+      res.status(200).json({ mensaje: 'Producto de Colección actualizado exitosamente' });
+    } else {
+      res.status(404).json({ mensaje: 'Producto de Colección no encontrado' });
+    }
+  } catch (error) {
+    console.error('Error al actualizar el producto de Colección:', error);
+    res.status(500).json({ mensaje: 'Error interno del servidor' });
+  }
+});
+
 // Ruta para obtener los productos
 router.get('/api/productos', async (req, res) => {
   try {
@@ -10,6 +63,49 @@ router.get('/api/productos', async (req, res) => {
     res.json(results);
   } catch (err) {
     res.status(500).send(err);
+  }
+});
+
+// Ruta para obtener un producto por ID
+router.get('/api/productos/:id', async (req, res) => {
+  const productId = req.params.id;
+  try {
+    const [results] = await pool.query('SELECT * FROM productos WHERE id_productos = ?', [productId]);
+    if (results.length > 0) {
+      res.json(results[0]);
+    } else {
+      res.status(404).send({ mensaje: 'Producto no encontrado' });
+    }
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+// Ruta para actualizar un producto por ID
+router.put('/api/productos/:id', async (req, res) => {
+  const productId = req.params.id;
+  const { categoria, titulo, descripcion, precio, imagen_principal, imagen_secundaria, disponible } = req.body;
+
+  // Validaciones adicionales del servidor
+  if (!categoria || !titulo || !descripcion || !precio || !imagen_principal || !imagen_secundaria || disponible === undefined) {
+    return res.status(400).json({ mensaje: 'Todos los campos son obligatorios' });
+  }
+
+  try {
+    // Actualiza el producto en la base de datos
+    const [result] = await pool.execute(
+      'UPDATE productos SET categoria=?, titulo=?, descripcion=?, precio=?, imagen_principal=?, imagen_secundaria=?, disponible=? WHERE id_productos=?',
+      [categoria, titulo, descripcion, precio, imagen_principal, imagen_secundaria, disponible, productId]
+    );
+
+    if (result.affectedRows > 0) {
+      res.status(200).json({ mensaje: 'Producto actualizado exitosamente' });
+    } else {
+      res.status(404).json({ mensaje: 'Producto no encontrado' });
+    }
+  } catch (error) {
+    console.error('Error al actualizar el producto:', error);
+    res.status(500).json({ mensaje: 'Error interno del servidor' });
   }
 });
 
@@ -35,6 +131,31 @@ router.post('/login', async (req, res) => {
   try {
     // Consulta para verificar las credenciales del usuario en la base de datos
     const [rows, fields] = await pool.execute('SELECT * FROM usuarios WHERE email = ? AND password = ?', [email, password]);
+
+    if (rows.length > 0) {
+      // Usuario autenticado correctamente
+      res.status(200).json({ mensaje: 'Inicio de sesión exitoso' });
+    } else {
+      // Credenciales incorrectas
+      res.status(401).json({ mensaje: 'Credenciales incorrectas' });
+    }
+  } catch (error) {
+    console.error('Error al iniciar sesión:', error);
+    res.status(500).json({ mensaje: 'Error interno al iniciar sesión' });
+  }
+});
+
+// Ruta para mostrar el formulario de inicio de sesión administrador (GET)
+router.get('/admin_login_1', (req, res) => {
+  res.sendFile(__dirname + '/public/admin/admin_login.js');
+});
+// Ruta para procesar el inicio sesión del administrador  (POST)
+router.post('/admin_login_1', async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    // Consulta para verificar las credenciales del usuario en la base de datos
+    const [rows, fields] = await pool.execute('SELECT * FROM administradores WHERE email = ? AND password = ?', [email, password]);
 
     if (rows.length > 0) {
       // Usuario autenticado correctamente
@@ -76,9 +197,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-
-// Ruta PUT para actualizar un USUARIO por ID
-
+// Ruta PUT para actualizar un usuario por ID
 router.put('/api/usuarios/:id', async (req, res) => {
   const userId = req.params.id;
   const { nombre, apellido, dni, provincia, email, password, rating, comentarios, acepto_terminos } = req.body;
@@ -106,8 +225,7 @@ router.put('/api/usuarios/:id', async (req, res) => {
   }
 });
 
-
-// Ruta DELETE para borrar un USUARIO por ID
+// Ruta DELETE para borrar un usuario por ID
 router.delete('/api/usuarios/:id', async (req, res) => {
   const userId = req.params.id;
 
@@ -125,7 +243,5 @@ router.delete('/api/usuarios/:id', async (req, res) => {
     res.status(500).json({ mensaje: 'Error interno del servidor' });
   }
 });
-
-
 
 export default router;
