@@ -1,6 +1,6 @@
 import express from 'express';
 import { PORT } from './public/js/config.js';
-import apiRoutes from './routes.js'; // Asegúrate de que la ruta es correcta
+import apiRoutes from './routes.js';
 import path from 'path';
 
 const app = express();
@@ -27,7 +27,7 @@ app.get('/colecciones', (req, res) => {
 
 // Ruta para servir la página de inicio de sesión
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'login.html')); // Asegúrate de que login.html es la página de inicio de sesión
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
 // Middleware para manejar errores (ejemplo)

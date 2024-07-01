@@ -59,7 +59,7 @@ router.put('/api/colecciones1/:id', async (req, res) => {
 // Ruta para obtener los productos
 router.get('/api/productos', async (req, res) => {
   try {
-    const [results] = await pool.query('SELECT * FROM productos'); // Cambia "productos" por tu tabla real
+    const [results] = await pool.query('SELECT * FROM productos'); 
     res.json(results);
   } catch (err) {
     res.status(500).send(err);
@@ -243,5 +243,35 @@ router.delete('/api/usuarios/:id', async (req, res) => {
     res.status(500).json({ mensaje: 'Error interno del servidor' });
   }
 });
+
+
+// Ruta para eliminar un producto por ID
+router.delete('/api/productos/:id', async (req, res) => {
+  const productId = req.params.id;
+  try {
+    const [result] = await pool.execute('DELETE FROM productos WHERE id_productos = ?', [productId]);
+    if (result.affectedRows > 0) {
+      res.status(200).json({ mensaje: 'Producto eliminado exitosamente' });
+    } else {
+      res.status(404).json({ mensaje: 'Producto no encontrado' });
+    }
+  } catch (error) {
+    console.error('Error al eliminar el producto:', error);
+    res.status(500).json({ mensaje: 'Error interno del servidor' });
+  }
+});
+
+// Ruta para agregar un producto
+router.post('/api/productos1', async (req, res) => {
+  const { categoria, titulo, descripcion, precio, imagen_principal, imagen_secundaria, disponible, } = req.body;
+  try {
+    const [result] = await pool.query('INSERT INTO productos (categoria, titulo, descripcion, precio,  imagen_principal, imagen_secundaria, disponible) VALUES (?, ?, ?, ?, ?, ?, ?)', [categoria, titulo, descripcion, precio, imagen_principal, imagen_secundaria, disponible]);
+    res.status(201).json({ id: result.insertId, mensaje: 'Producto agregado exitosamente' });
+  } catch (error) {
+    console.error('Error al agregar el producto:', error);
+    res.status(500).json({ mensaje: 'Error interno del servidor' });
+  }
+});
+
 
 export default router;
