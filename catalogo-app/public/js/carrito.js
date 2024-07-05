@@ -1,16 +1,18 @@
+// carrito.js
+
 let cart = [];
 
 function addToCart(product) {
+    // Convertir el precio a número decimal si es necesario
     const precioNumerico = parseFloat(product.precio);
     if (!isNaN(precioNumerico)) {
-        product.precio = precioNumerico;
+        product.precio = precioNumerico; // Actualizar el precio en el objeto product
         cart.push(product);
-        localStorage.setItem('cart', JSON.stringify(cart)); // Guardar carrito en localStorage
         alert("Producto agregado al carrito!");
         updateCartIcon();
     } else {
         console.error('El precio del producto no es un número válido:', product.precio);
-        alert('Error: El precio del producto no es un número válido.');
+        // Manejar el caso donde el precio no es válido
     }
 }
 
@@ -26,6 +28,7 @@ function showCart() {
     cart.forEach((product, index) => {
         const listItem = document.createElement("li");
         listItem.className = "list-group-item d-flex justify-content-between align-items-center";
+        // Usar parseFloat para asegurar que el precio sea numérico
         const precioNumerico = parseFloat(product.precio);
         listItem.innerHTML = `
             ${product.titulo} - $${precioNumerico.toFixed(2)}
@@ -38,13 +41,12 @@ function showCart() {
 }
 
 function updateCartTotal() {
-    const total = cart.reduce((sum, product) => sum + parseFloat(product.precio), 0);
+    const total = cart.reduce((sum, product) => sum + product.precio, 0);
     document.getElementById("cart-total").textContent = total.toFixed(2);
 }
 
 function removeFromCart(index) {
     cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart)); // Actualizar carrito en localStorage
     showCart();
     updateCartIcon();
 }
@@ -55,7 +57,6 @@ function checkout() {
     } else {
         alert("¡Gracias por su compra!");
         cart = [];
-        localStorage.removeItem('cart'); // Eliminar carrito de localStorage
         showCart();
         updateCartIcon();
     }
@@ -67,11 +68,3 @@ document.getElementById("cart-button").addEventListener("click", () => {
 });
 
 document.getElementById("checkout-button").addEventListener("click", checkout);
-
-document.addEventListener('DOMContentLoaded', () => {
-    const savedCart = localStorage.getItem('cart');
-    if (savedCart) {
-        cart = JSON.parse(savedCart);
-        updateCartIcon();
-    }
-});

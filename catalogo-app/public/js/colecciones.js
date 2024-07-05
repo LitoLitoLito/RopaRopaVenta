@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p>${producto.descripcion}</p>
                         <p class="precio">$${producto.precio}</p>
                         <div class="botones-compra">
-                            <button class="button1" onclick="addToCart(${JSON.stringify(producto).replace(/"/g, '&quot;')})">Al Carrito</button>
+                            <button class="button1" onclick="mostrarMensajeCompraExitosa()">Comprar</button>
                         </div>
                     `;
                     container.appendChild(productoDiv);
